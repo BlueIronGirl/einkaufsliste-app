@@ -23,7 +23,7 @@ services:
       - database:/var/lib/mysql
   backend:
     depends_on: [ db ]
-    build: backend
+    image: "blueirongirl/einkaufsliste-backend"
     restart: unless-stopped
     env_file: [ .env ]
     environment:
@@ -38,14 +38,13 @@ services:
          }'
     ports:
       - "8080:8080"
-      - "5005:5005"
     networks:
       - my-app
     stdin_open: true
     tty: true
   frontend:
     depends_on: [ backend ]
-    build: frontend
+    image: "blueirongirl/einkaufsliste-frontend"
     restart: unless-stopped
     env_file: [ .env ]
     ports:
