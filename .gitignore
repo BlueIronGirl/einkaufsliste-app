@@ -11,4 +11,6 @@ out
 nbproject
 build
 Beispiele
-GFOS
+
+*.env
+!example.env
