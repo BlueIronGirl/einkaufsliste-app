@@ -23,19 +23,12 @@ services:
       - database:/var/lib/mysql
   backend:
     depends_on: [ db ]
-    image: "blueirongirl/einkaufsliste-backend"
+    #image: "blueirongirl/einkaufsliste-backend"
+    build:
+      context: "E:/dev/quellen/alicegithub/einkaufsliste-backend"
+      dockerfile: "E:/dev/quellen/alicegithub/einkaufsliste-backend/Dockerfile"
     restart: unless-stopped
     env_file: [ .env ]
-    environment:
-      SPRING_APPLICATION_JSON: '{
-           "spring.datasource.url"  : "jdbc:mariadb://db:3306/alicedb?useSSL=false",
-           "spring.datasource.username" : "root",
-           "spring.datasource.password" : "test123",
-           "spring.datasource.driver-class-name" : "org.mariadb.jdbc.Driver",
-           "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MariaDB103Dialect",
-           "spring.jpa.hibernate.ddl-auto" : "update",
-           "server.error.include-message" : "always"
-         }'
     ports:
       - "8080:8080"
     networks:
@@ -44,13 +37,17 @@ services:
     tty: true
   frontend:
     depends_on: [ backend ]
-    image: "blueirongirl/einkaufsliste-frontend"
+    #    image: "blueirongirl/einkaufsliste-frontend"
+    build:
+      context: "E:/dev/quellen/alicegithub/einkaufsliste-frontend"
+      dockerfile: "E:/dev/quellen/alicegithub/einkaufsliste-frontend/Dockerfile"
     restart: unless-stopped
     env_file: [ .env ]
     ports:
       - "80:80"
     networks:
       - my-app
+
 networks:
   my-app:
-   driver: bridge
+    driver: bridge
