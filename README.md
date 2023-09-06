@@ -4,8 +4,8 @@ The Shopping-List can be started with [Docker](docker-compose.yml).
 
 ## Links:
 * Running Version: http://shopping-list.app-node.de/
-* Backend: https://github.com/BlueIronGirl/shoppinglist-backend
-* Frontend: https://github.com/BlueIronGirl/shoppinglist-frontend
+* Backend: https://github.com/BlueIronGirl/shopping-list-backend
+* Frontend: https://github.com/BlueIronGirl/shopping-list-frontend
 
 ## How to run:
 
