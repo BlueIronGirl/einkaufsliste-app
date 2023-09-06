@@ -1,7 +1,31 @@
-# Einkaufsliste
+# Shopping-List
+This is a showcase of the Java-Framework Spring Boot in Combination with the Typescript-Frontend-Framework Angular with PrimeNG.
+The Shopping-List can be started with [Docker](docker-compose.yml).
 
-Dies ist ein Showcase für das Java-Framework Spring Boot in Kombination mit dem TypeScript-Frontend-Framework Angular und PrimeNG.
-Die Einkaufsliste kann mit [Docker](Dockerfile) gestartet werden. [GitHub Actions](.github/workflows) sind zusätzlich inkludiert.
+## Links:
+* Running Version: http://shopping-list.app-node.de/
+* Backend: https://github.com/BlueIronGirl/shoppinglist-backend
+* Frontend: https://github.com/BlueIronGirl/shoppinglist-frontend
 
-## Einkaufsliste starten:
+## How to run:
+
+### Docker
+
+#### Clean up old containers
+
+```shell
+docker-compose rm -f db
+docker-compose rm -f backend
+docker-compose rm -f frontend
+```
+
+#### Reset Database
+```shell
+docker volume rm -f einkaufsliste-app_database
+```
+
+#### Start containers with Docker-Compose
+```shell
+docker-compose up
+```
 
