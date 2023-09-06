@@ -15,8 +15,8 @@ services:
 
   backend:
     build:
-      context: E:\dev\quellen\alicegithub\einkaufsliste-backend
-      dockerfile: E:\dev\quellen\alicegithub\einkaufsliste-backend\Dockerfile
+      context: E:\dev\quellen\alicegithub\shopping-list-backend
+      dockerfile: E:\dev\quellen\alicegithub\shopping-list-backend\Dockerfile
     restart: unless-stopped
     depends_on: [ db ]
     env_file: [ .env ]
@@ -26,8 +26,8 @@ services:
   frontend:
     depends_on: [ backend ]
     build:
-      context: E:\dev\quellen\alicegithub\einkaufsliste-frontend
-      dockerfile: E:\dev\quellen\alicegithub\einkaufsliste-frontend\Dockerfile
+      context: E:\dev\quellen\alicegithub\shopping-list-frontend
+      dockerfile: E:\dev\quellen\alicegithub\shopping-list-frontend\Dockerfile
     restart: unless-stopped
     env_file: [ .env ]
     ports:

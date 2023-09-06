@@ -21,7 +21,7 @@ docker-compose rm -f frontend
 
 #### Reset Database
 ```shell
-docker volume rm -f einkaufsliste-app_database
+docker volume rm -f shopping-list-app_database
 ```
 
 #### Start containers with Docker-Compose

@@ -14,7 +14,7 @@ services:
       - database:/var/lib/mysql
 
   backend:
-    image: "blueirongirl/einkaufsliste-backend"
+    image: "blueirongirl/shopping-list-backend"
     restart: unless-stopped
     depends_on: [ db ]
     env_file: [ .env ]
@@ -23,7 +23,7 @@ services:
 
   frontend:
     depends_on: [ backend ]
-    image: "blueirongirl/einkaufsliste-frontend"
+    image: "blueirongirl/shopping-list-frontend"
     restart: unless-stopped
     env_file: [ .env ]
     ports:
